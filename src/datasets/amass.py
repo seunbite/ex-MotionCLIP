@@ -136,7 +136,8 @@ def get_trans_from_vibe(vibe, use_z=True):
 class AMASS(Dataset):
     dataname = "amass"
 
-    def __init__(self, datapath="data/amass/amass_30fps_legacy_db.pt", split="train", use_z=1, **kwargs):
+    def __init__(self, datapath="data/amass_db/amass_30fps_db.pt", split="train", use_z=1, **kwargs):
+        import pdb; pdb.set_trace()
         assert '_db.pt' in datapath
         self.datapath = datapath.replace('_db.pt', '_{}.pt'.format(split))
         assert os.path.exists(self.datapath)
